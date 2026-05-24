@@ -249,6 +249,7 @@ body {
   border-radius: 30px;
   backdrop-filter: blur(10px);
   transition: 0.4s;
+  max-width: 100%;
 }
 
 .profile-card:hover {
@@ -446,6 +447,16 @@ body {
   .profile-card {
     flex-direction: column;
     text-align: center;
+    padding: 25px;
+  }
+  .profile-content {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .profile-card img {
+    width: 180px;
+    height: 180px;
   }
 
   .header h1 {
