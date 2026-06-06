@@ -18,11 +18,11 @@ import "./components/styles/style.css";
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+}, []);
   useEffect(() => {
     document.body.className = theme;
     localStorage.setItem("theme", theme);
@@ -30,12 +30,12 @@ function App() {
 
   return (
     <div className="app">
-      <div className="theme-dropdown">
-        <select value={theme} onChange={(e) => setTheme(e.target.value)}>
-          <option value="dark">🌙 Dark Mode</option>
-          <option value="light">☀️ Light Mode</option>
-          <option value="ocean">🌊 Ocean Mode</option>
-        </select>
+      <div className="theme-switcher">
+        <button onClick={() => setTheme("dark")}>🌙 Dark</button>
+
+        <button onClick={() => setTheme("light")}>☀️ Light</button>
+
+        <button onClick={() => setTheme("ocean")}>🌊 Ocean</button>
       </div>
       <Navbar />
 
@@ -56,7 +56,7 @@ function App() {
       <Feedback />
       <Contact />
       <Footer />
-      <ScrollTop />
+      <ScrollTop/>
     </div>
   );
 }
