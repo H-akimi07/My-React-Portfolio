@@ -1,4 +1,4 @@
-import { Typewriter } from "react-simple-typewriter";
+
 const quotes = [
   "Dream big. Build bigger.",
   "Code your imagination into reality.",
