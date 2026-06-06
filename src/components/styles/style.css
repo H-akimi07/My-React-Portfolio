@@ -786,10 +786,12 @@ body {
 }
 
 .skill-progress {
+  width: 0;
   height: 100%;
   background: linear-gradient(90deg, #8b5cf6, #06b6d4);
   border-radius: 20px;
   animation: fillBar 2s ease forwards;
+  transition: width 1.5s ease-in-out;
 }
 
 @keyframes fillBar {
@@ -898,16 +900,27 @@ body.dark {
 
   border: none;
   border-radius: 12px;
+  background: transparent linear-gradient(rgba(177, 169, 169, 0.05));
 }
 
 .feedback-form button {
-  padding: 15px;
-
+  padding: 18px;
   border: none;
-  border-radius: 12px;
-
+  border-radius: 40px;
+  background: linear-gradient(to right, #8b5cf6, #06b6d4);
+  color: white;
+  font-size: 1rem;
   cursor: pointer;
+  transition: 0.4s;
 }
+.feedback-form button:hover {
+
+  
+   transform: scale(1.03);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+
+}
+
 
 .feedback-list {
   margin-top: 50px;
