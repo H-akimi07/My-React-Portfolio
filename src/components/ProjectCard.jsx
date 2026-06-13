@@ -1,4 +1,4 @@
-import {useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { FavoritesContext } from "../context/FavoritesContext";
 
@@ -10,9 +10,17 @@ function ProjectCard({ project }) {
   return (
     <>
       <div className="project-card">
-        {project.featured && <span className="featured">Featured</span>}
+        <div className="card-badges">
+          {project.featured && <span className="featured">🌟 Featured</span>}
 
-        <img src={project.image} alt={project.name} />
+          <span className="status-badge">{project.status}</span>
+        </div>
+
+        <img
+          src={project.image}
+          alt={`${project.name} project screenshot`}
+          loading="lazy"
+        />
 
         <h3>{project.name}</h3>
 
@@ -25,6 +33,16 @@ function ProjectCard({ project }) {
         </div>
 
         <Link to={`/projects/${project.id}`}>View Project</Link>
+
+        <div className="project-links">
+          <a href={project.demo} target="_blank" rel="noreferrer">
+            Live Demo
+          </a>
+
+          <a href={project.github} target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+        </div>
       </div>
 
       {/* MODAL OUTSIDE CARD BUT INSIDE RETURN */}
@@ -43,7 +61,9 @@ function ProjectCard({ project }) {
               <p style={{ color: "gold" }}>🌟 Featured Project</p>
             )}
 
-            <button onClick={() => toggleFavorite(project)}>
+            <button 
+            aria-label="Toggle favorite project"
+            onClick={() => toggleFavorite(project)}>
               {isFav ? "⭐ Remove Favorite" : "🤍 Add Favorite"}
             </button>
           </div>

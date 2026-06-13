@@ -19,7 +19,7 @@ function ProjectDetails() {
 
       <h1>{project.name}</h1>
 
-      <img src={project.image} alt={project.name} />
+      <img src={project.image} alt={project.name} loading="lazy" />
 
       <p>{project.description}</p>
 

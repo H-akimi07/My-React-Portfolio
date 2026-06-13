@@ -4,8 +4,11 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="socials">
-        <a href="https://github.com/H-akimi07">GitHub</a>
-        <a href="https://www.linkedin.com/in/samira-hakimi-342228289">
+
+        <div className="social-links">
+</div>
+        <a href="https://github.com/H-akimi07" target = "_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/samira-hakimi-342228289" target="_blank" rel="noreferrer">
           LinkedIn
         </a>
         

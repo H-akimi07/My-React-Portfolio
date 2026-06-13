@@ -28,7 +28,7 @@ function App() {
 
 
   return (
-    <div className="app">
+    <main className="app">
       <div className="theme-dropdown">
         <select 
         value={theme}
@@ -61,7 +61,7 @@ function App() {
       <Footer />
 
       <ScrollTop />
-    </div>
+    </main>
   );
 }
 

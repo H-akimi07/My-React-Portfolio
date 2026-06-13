@@ -4,7 +4,7 @@ function Profile({ name, title, bio }) {
   return (
     <section className="profile-section">
       <div className="profile-card">
-        <img src={profileImage} alt={name} />
+        <img loading= "lazy" src={profileImage} alt={name} />
 
         <div className="profile-content">
           <h2>{name}</h2>

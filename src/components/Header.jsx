@@ -1,4 +1,3 @@
-
 const quotes = [
   "Dream big. Build bigger.",
   "Code your imagination into reality.",
@@ -6,7 +5,7 @@ const quotes = [
   "Frontend is digital art.",
 ];
 
-function Header({ message }) {
+function Header() {
   const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
   return (
@@ -28,25 +27,28 @@ function Header({ message }) {
 
       <div className="glow"></div>
 
-      <h2 data-aos="fade-up" data-aos-delay="100">
-        Hello, I am
-      </h2>
+      <h2>👋 Hi, I'm</h2>
 
-      <h1 data-aos="fade-up" data-aos-delay="200">
-        Samira Hakimi
-      </h1>
+      <h1>Samira Hakimi</h1>
 
-      <p data-aos="fade-up" data-aos-delay="300">
-        {message}
+      <p className="hero-subtitle">
+        React Developer building modern, accessible, and interactive web
+        experiences.
       </p>
 
-      <span className="quote" data-aos="fade-up" data-aos-delay="400">
-        “{randomQuote}”
-      </span>
+      <div className="hero-buttons">
+        <a href="#projects" className="primary-btn">
+          View My Projects
+        </a>
 
-      <button data-aos="zoom-in" data-aos-delay="500">
-        Explore Portfolio
-      </button>
+        <a href="#contact" className="secondary-btn">
+          Let's Connect
+        </a>
+      </div>
+
+      <p className="hero-quote">
+        "Building beautiful digital experiences one component at a time."
+      </p>
     </header>
   );
 }

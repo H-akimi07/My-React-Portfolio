@@ -6,8 +6,14 @@ import Projects from "../components/Projects";
 import ProjectUpdates from "../components/ProjectUpdates";
 import Feedback from "../components/Feedback";
 import Contact from "../components/Contact";
+import { useEffect } from "react";
+import Achievements from "../components/Achievements";
 
 function Home() {
+  useEffect(() => {
+    document.title = "Samira Hakimi | Portfolio";
+  }, []);
+
   return (
     <>
       <Header message="I create futuristic web experiences with React & JavaScript ✨" />
@@ -25,6 +31,7 @@ function Home() {
       <Projects />
       <ProjectUpdates />
       <Feedback />
+      <Achievements />
       <Contact />
     </>
   );

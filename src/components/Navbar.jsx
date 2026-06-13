@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="navbar">
+    <nav className="navbar" aria-label="Main Navigation">
       <h1 className="logo">SAMIRA HAKIMI</h1>
 
       <ul className="nav-links">
@@ -15,7 +15,12 @@ function Navbar() {
         </li>
 
         <li>
-          <NavLink to="/projects">Projects</NavLink>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
+            Projects
+          </NavLink>
         </li>
 
         <li>

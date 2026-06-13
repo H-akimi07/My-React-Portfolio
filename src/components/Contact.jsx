@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 
 function Contact() {
   const [name, setName] = useState("");
@@ -58,12 +58,17 @@ function Contact() {
 
       <p>Let’s Connect and Create Something Beautiful Together ✨</p>
 
+      <p className="contact-note">
+        I'm open to internships, collaborations, and freelance opportunities.
+      </p>
+
       <form className="contact-form" onSubmit={handleSubmit} data-aos="fade-up">
         {errors.name && <p className="error">{errors.name}</p>}
 
         <input
           type="text"
           placeholder="Your Name"
+          aria-label="Your Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
@@ -71,6 +76,7 @@ function Contact() {
         <input
           type="email"
           placeholder="Your Email"
+          aria-label="Your Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -79,6 +85,7 @@ function Contact() {
 
         <textarea
           placeholder="Write your message..."
+          aria-label="Your Message"
           rows="6"
           value={message}
           onChange={(e) => setMessage(e.target.value)}

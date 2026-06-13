@@ -4,18 +4,26 @@ import { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 
 function Projects() {
+  const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("All");
-
-  const filteredProjects =
-    filter === "All"
-      ? projects
-      : projects.filter((project) => project.tech.includes(filter));
+  const filteredProjects = projects.filter((project) => 
+  (filter === "All" || 
+    project.tech.includes(filter)) &&
+  project.name.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <section className="projects-section" id="projects" data-aos="fade-up">
       <h2 className="projects-title">My Projects ✨</h2>
 
       <div className="filter-buttons">
+        <input
+          type="text"
+          placeholder="Search projects..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+
         <button onClick={() => setFilter("All")}>All</button>
 
         <button onClick={() => setFilter("React")}>React</button>
