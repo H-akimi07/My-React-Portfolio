@@ -18,3 +18,6 @@ If you are developing a production application, we recommend using TypeScript wi
 ## The demo link of the my portfolio website in vercel and netlify try both. I hope it works well in one of them
 
 https://my-react-portfolio-j1dn.vercel.app/
+
+## this is the finilized part (4) demo link of my portfolio
+https://my-react-portfolio-e7zr.vercel.app/
