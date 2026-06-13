@@ -1,29 +1,31 @@
+import { NavLink } from "react-router-dom";
+
 function Navbar() {
   return (
     <nav className="navbar">
-
       <h1 className="logo">SAMIRA HAKIMI</h1>
 
       <ul className="nav-links">
-
         <li>
-          <a href="#home">Home</a>
+          <NavLink to="/">Home</NavLink>
         </li>
 
         <li>
-          <a href="#about">About</a>
+          <NavLink to="/about">About</NavLink>
         </li>
 
         <li>
-          <a href="#projects">Projects</a>
+          <NavLink to="/projects">Projects</NavLink>
         </li>
 
         <li>
-          <a href="#contact">Contact</a>
+          <NavLink to="/favorites">Favorites ⭐</NavLink>
         </li>
 
+        <li>
+          <NavLink to="/contact">Contact</NavLink>
+        </li>
       </ul>
-
     </nav>
   );
 }

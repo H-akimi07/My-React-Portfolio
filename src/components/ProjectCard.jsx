@@ -1,6 +1,10 @@
-import { useState } from "react";
+import {useState, useContext } from "react";
+import { Link } from "react-router-dom";
+import { FavoritesContext } from "../context/FavoritesContext";
 
 function ProjectCard({ project }) {
+  const { favorites, toggleFavorite } = useContext(FavoritesContext);
+  const isFav = favorites.some((p) => p.id === project.id);
   const [open, setOpen] = useState(false);
 
   return (
@@ -20,26 +24,13 @@ function ProjectCard({ project }) {
           ))}
         </div>
 
-        <a href={project.link}>View Project</a>
-
-        <button
-          className="details-btn"
-          onClick={() => setOpen(true)}
-        >
-          View Details
-        </button>
+        <Link to={`/projects/${project.id}`}>View Project</Link>
       </div>
 
       {/* MODAL OUTSIDE CARD BUT INSIDE RETURN */}
       {open && (
-        <div
-          className="modal-overlay"
-          onClick={() => setOpen(false)}
-        >
-          <div
-            className="modal"
-            onClick={(e) => e.stopPropagation()}
-          >
+        <div className="modal-overlay" onClick={() => setOpen(false)}>
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
             <h2>{project.name}</h2>
 
             <p>{project.description}</p>
@@ -49,13 +40,11 @@ function ProjectCard({ project }) {
             </p>
 
             {project.featured && (
-              <p style={{ color: "gold" }}>
-                🌟 Featured Project
-              </p>
+              <p style={{ color: "gold" }}>🌟 Featured Project</p>
             )}
 
-            <button onClick={() => setOpen(false)}>
-              Close
+            <button onClick={() => toggleFavorite(project)}>
+              {isFav ? "⭐ Remove Favorite" : "🤍 Add Favorite"}
             </button>
           </div>
         </div>
